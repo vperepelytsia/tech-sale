@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.note {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.photos img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+.features {
+  margin: 10px 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.features li {
+  margin-bottom: 4px;
+}
+
+.defects {
+  color: #b00020;
+  font-size: 13px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.available {
+  background: #c8f7c5;
+}
+
+.reserved {
+  background: #ffeaa7;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  background: #0984e3;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox.active {
+  display: flex;
+}

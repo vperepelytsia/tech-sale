@@ -25,10 +25,10 @@
     "id": 2,
     "type": "Monitor",
     "name": "Samsung Monitor 24\"",
-    "specs": "Full HD · HDMI",
+    "specs": "24\" · Full HD · HDMI",
     "features": [
       "24\" IPS",
-      "1920×1080 (Full HD)",
+      "1920×1080",
       "HDMI",
       "60 Hz"
     ],
@@ -37,6 +37,85 @@
     "status": "reserved",
     "photos": [
       "images/monitor-24.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "type": "Laptop",
+    "name": "Dell Inspiron 3593",
+    "specs": "Intel i5-1035G1 · 16GB RAM · 15.6\"",
+    "features": [
+      "CPU: Intel Core i5-1035G1",
+      "4 ядра / 8 потоків",
+      "RAM: 16 GB DDR4 (2400 MHz)",
+      "Dual Channel",
+      "Battery: Excellent (~99%)"
+    ],
+    "defects": "уточнюється",
+    "price": "7000 грн",
+    "status": "available",
+    "serviceTag": "2WP2V43",
+    "photos": [
+      "images/3593-2wp2v43.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "type": "Laptop",
+    "name": "Dell Inspiron 3580",
+    "specs": "Intel i5-8265U · 16GB RAM · 15.6\"",
+    "features": [
+      "CPU: Intel Core i5-8265U",
+      "4 ядра / 8 потоків",
+      "RAM: 16 GB DDR4 (2400 MHz)",
+      "Dual Channel"
+    ],
+    "defects": "уточнюється",
+    "price": "6500 грн",
+    "status": "available",
+    "serviceTag": "CK811W2",
+    "photos": [
+      "images/3580-ck811w2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "type": "Laptop",
+    "name": "Dell Inspiron 3593",
+    "specs": "Intel i5-1035G1 · 16GB RAM · 15.6\"",
+    "features": [
+      "CPU: Intel Core i5-1035G1",
+      "4 ядра / 8 потоків",
+      "RAM: 16 GB DDR4 (2667 MHz)",
+      "Dual Channel",
+      "Battery: Good"
+    ],
+    "defects": "уточнюється",
+    "price": "7000 грн",
+    "status": "available",
+    "serviceTag": "1HJ0G13",
+    "photos": [
+      "images/3593-1hj0g13.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "type": "Laptop",
+    "name": "Dell Inspiron 3576 🔥",
+    "specs": "Intel i7-8550U · 32GB RAM · 15.6\"",
+    "features": [
+      "CPU: Intel Core i7-8550U",
+      "4 ядра / 8 потоків",
+      "RAM: 32 GB DDR4 (2400 MHz)",
+      "Dual Channel",
+      "ТОП конфігурація"
+    ],
+    "defects": "уточнюється",
+    "price": "9000 грн",
+    "status": "available",
+    "serviceTag": "G1FK6P2",
+    "photos": [
+      "images/3576-g1fk6p2.jpg"
     ]
   }
 ]

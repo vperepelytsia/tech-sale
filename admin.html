@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Адмінка</title>
+
+<style>
+body { font-family: Arial; padding:20px; max-width:800px; margin:auto; }
+input, select { margin:5px 0; padding:6px; width:100%; }
+button { margin:5px 5px 5px 0; padding:6px 10px; cursor:pointer; }
+.item { border:1px solid #ddd; padding:10px; margin:10px 0; }
+</style>
+</head>
+
+<body>
+
+<h2>🔐 Адмінка (GitHub)</h2>
+
+<input id="token" placeholder="GitHub Token">
+
+<h3>➕ Додати товар</h3>
+
+<input id="name" placeholder="Назва">
+<input id="specs" placeholder="Характеристики">
+<input id="price" placeholder="Ціна (6000)">
+<select id="status">
+  <option value="available">В наявності</option>
+  <option value="reserved">Зарезервовано</option>
+</select>
+
+<button onclick="addItem()">Додати</button>
+
+<hr>
+
+<h3>📦 Список товарів</h3>
+<div id="list"></div>
+
+<script>
+const owner = "vperepelytsia";
+const repo = "tech-sale";
+const path = "data.json";
+
+async function getFile(token) {
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+    headers: { Authorization: `token ${token}` }
+  });
+  return res.json();
+}
+
+async function updateFile(token, content, sha) {
+  await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${token}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: "update from admin",
+      content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
+      sha
+    })
+  });
+}
+
+async function load() {
+  const token = document.getElementById('token').value;
+  if (!token) return;
+
+  const file = await getFile(token);
+  const data = JSON.parse(atob(file.content));
+
+  const list = document.getElementById('list');
+  list.innerHTML = '';
+
+  data.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'item';
+
+    div.innerHTML = `
+      <input value="${item.name}" onchange="edit(${item.id}, 'name', this.value)">
+      <input value="${item.specs || ''}" onchange="edit(${item.id}, 'specs', this.value)">
+      <input value="${item.price}" onchange="edit(${item.id}, 'price', this.value)">
+      
+      <select onchange="edit(${item.id}, 'status', this.value)">
+        <option value="available" ${item.status==='available'?'selected':''}>В наявності</option>
+        <option value="reserved" ${item.status==='reserved'?'selected':''}>Зарезервовано</option>
+      </select>
+
+      <button onclick="removeItem(${item.id})">❌ Видалити</button>
+    `;
+
+    list.appendChild(div);
+  });
+
+  window.currentData = data;
+  window.currentSha = file.sha;
+}
+
+async function addItem() {
+  const token = document.getElementById('token').value;
+  const file = await getFile(token);
+  const data = JSON.parse(atob(file.content));
+
+  data.push({
+    id: Date.now(),
+    name: name.value,
+    specs: specs.value,
+    price: price.value + " грн",
+    status: status.value,
+    features: [],
+    defects: "",
+    photos: []
+  });
+
+  await updateFile(token, data, file.sha);
+  load();
+}
+
+async function edit(id, field, value) {
+  const token = document.getElementById('token').value;
+  const file = await getFile(token);
+  const data = JSON.parse(atob(file.content));
+
+  const item = data.find(i => i.id === id);
+  item[field] = value;
+
+  await updateFile(token, data, file.sha);
+}
+
+async function removeItem(id) {
+  const token = document.getElementById('token').value;
+  const file = await getFile(token);
+  let data = JSON.parse(atob(file.content));
+
+  data = data.filter(i => i.id !== id);
+
+  await updateFile(token, data, file.sha);
+  load();
+}
+</script>
+
+</body>
+</html>

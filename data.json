@@ -3,7 +3,7 @@
     "id": 1,
     "type": "Laptop",
     "name": "Dell Latitude 5490",
-    "specs": "Intel i5 · 16GB RAM · 256GB SSD · 14\"",
+    "specs": "Intel i5 Â· 16GB RAM Â· 256GB SSD Â· 14\"",
     "features": [
       "Intel Core i5",
       "16 GB RAM",
@@ -12,8 +12,8 @@
       "Wi-Fi, Bluetooth",
       "Windows 10 Pro"
     ],
-    "defects": "Потертості корпусу, батарея ~70%",
-    "price": "6000 грн",
+    "defects": "ÐÐ¾ÑÐµÑÑÐ¾ÑÑÑ ÐºÐ¾ÑÐ¿ÑÑÑ, Ð±Ð°ÑÐ°ÑÐµÑ ~70%",
+    "price": "6000 Ð³ÑÐ½",
     "status": "available",
     "photos": [
       "images/dell-5490-1.jpg",
@@ -25,15 +25,15 @@
     "id": 2,
     "type": "Monitor",
     "name": "Samsung Monitor 24\"",
-    "specs": "24\" · Full HD · HDMI",
+    "specs": "24\" Â· Full HD Â· HDMI",
     "features": [
       "24\" IPS",
-      "1920×1080",
+      "1920Ã1080",
       "HDMI",
       "60 Hz"
     ],
-    "defects": "1 битий піксель",
-    "price": "2500 грн",
+    "defects": "1 Ð±Ð¸ÑÐ¸Ð¹ Ð¿ÑÐºÑÐµÐ»Ñ",
+    "price": "2500 Ð³ÑÐ½",
     "status": "reserved",
     "photos": [
       "images/monitor-24.jpg"
@@ -43,16 +43,16 @@
     "id": 3,
     "type": "Laptop",
     "name": "Dell Inspiron 3593",
-    "specs": "Intel i5-1035G1 · 16GB RAM · 15.6\"",
+    "specs": "Intel i5-1035G1 Â· 16GB RAM Â· 15.6\"",
     "features": [
       "CPU: Intel Core i5-1035G1",
-      "4 ядра / 8 потоків",
+      "4 ÑÐ´ÑÐ° / 8 Ð¿Ð¾ÑÐ¾ÐºÑÐ²",
       "RAM: 16 GB DDR4 (2400 MHz)",
       "Dual Channel",
       "Battery: Excellent (~99%)"
     ],
-    "defects": "уточнюється",
-    "price": "7000 грн",
+    "defects": "ÑÑÐ¾ÑÐ½ÑÑÑÑÑÑ",
+    "price": "7000 Ð³ÑÐ½",
     "status": "available",
     "serviceTag": "2WP2V43",
     "photos": [
@@ -63,15 +63,15 @@
     "id": 4,
     "type": "Laptop",
     "name": "Dell Inspiron 3580",
-    "specs": "Intel i5-8265U · 16GB RAM · 15.6\"",
+    "specs": "Intel i5-8265U Â· 16GB RAM Â· 15.6\"",
     "features": [
       "CPU: Intel Core i5-8265U",
-      "4 ядра / 8 потоків",
+      "4 ÑÐ´ÑÐ° / 8 Ð¿Ð¾ÑÐ¾ÐºÑÐ²",
       "RAM: 16 GB DDR4 (2400 MHz)",
       "Dual Channel"
     ],
-    "defects": "уточнюється",
-    "price": "6500 грн",
+    "defects": "ÑÑÐ¾ÑÐ½ÑÑÑÑÑÑ",
+    "price": "6500 Ð³ÑÐ½",
     "status": "available",
     "serviceTag": "CK811W2",
     "photos": [
@@ -82,16 +82,16 @@
     "id": 5,
     "type": "Laptop",
     "name": "Dell Inspiron 3593",
-    "specs": "Intel i5-1035G1 · 16GB RAM · 15.6\"",
+    "specs": "Intel i5-1035G1 Â· 16GB RAM Â· 15.6\"",
     "features": [
       "CPU: Intel Core i5-1035G1",
-      "4 ядра / 8 потоків",
+      "4 ÑÐ´ÑÐ° / 8 Ð¿Ð¾ÑÐ¾ÐºÑÐ²",
       "RAM: 16 GB DDR4 (2667 MHz)",
       "Dual Channel",
       "Battery: Good"
     ],
-    "defects": "уточнюється",
-    "price": "7000 грн",
+    "defects": "ÑÑÐ¾ÑÐ½ÑÑÑÑÑÑ",
+    "price": "7000 Ð³ÑÐ½",
     "status": "available",
     "serviceTag": "1HJ0G13",
     "photos": [
@@ -101,21 +101,29 @@
   {
     "id": 6,
     "type": "Laptop",
-    "name": "Dell Inspiron 3576 🔥",
-    "specs": "Intel i7-8550U · 32GB RAM · 15.6\"",
+    "name": "Dell Inspiron 3576 ð¥",
+    "specs": "Intel i7-8550U Â· 32GB RAM Â· 15.6\"",
     "features": [
       "CPU: Intel Core i7-8550U",
-      "4 ядра / 8 потоків",
+      "4 ÑÐ´ÑÐ° / 8 Ð¿Ð¾ÑÐ¾ÐºÑÐ²",
       "RAM: 32 GB DDR4 (2400 MHz)",
       "Dual Channel",
-      "ТОП конфігурація"
+      "Ð¢ÐÐ ÐºÐ¾Ð½ÑÑÐ³ÑÑÐ°ÑÑÑ"
     ],
-    "defects": "уточнюється",
-    "price": "9000 грн",
+    "defects": "ÑÑÐ¾ÑÐ½ÑÑÑÑÑÑ",
+    "price": "9000 Ð³ÑÐ½",
     "status": "available",
     "serviceTag": "G1FK6P2",
     "photos": [
       "images/3576-g1fk6p2.jpg"
     ]
+  },
+  {
+    "id": 1776239615884,
+    "specs": "",
+    "price": " грн",
+    "features": [],
+    "defects": "",
+    "photos": []
   }
 ]

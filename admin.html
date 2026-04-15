@@ -36,10 +36,22 @@ button { margin:5px 5px 5px 0; padding:6px 10px; cursor:pointer; }
 <div id="list"></div>
 
 <script>
+// ================== TOKEN ==================
+document.addEventListener('DOMContentLoaded', () => {
+  const savedToken = localStorage.getItem('gh_token');
+  if (savedToken) document.getElementById('token').value = savedToken;
+
+  document.getElementById('token').addEventListener('input', e => {
+    localStorage.setItem('gh_token', e.target.value);
+  });
+});
+
+// ================== CONFIG ==================
 const owner = "vperepelytsia";
 const repo = "tech-sale";
 const path = "data.json";
 
+// ================== API ==================
 async function getFile(token) {
   const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
     headers: { Authorization: `token ${token}` }
@@ -62,17 +74,25 @@ async function updateFile(token, content, sha) {
   });
 }
 
+// ================== HELPERS ==================
+function decode(base64) {
+  return JSON.parse(decodeURIComponent(escape(atob(base64))));
+}
+
+// ================== LOAD ==================
 async function load() {
   const token = document.getElementById('token').value;
   if (!token) return;
 
   const file = await getFile(token);
-  const data = JSON.parse(atob(file.content));
+  const data = decode(file.content);
 
   const list = document.getElementById('list');
   list.innerHTML = '';
 
   data.forEach(item => {
+    if (!item.name) return;
+
     const div = document.createElement('div');
     div.className = 'item';
 
@@ -92,14 +112,20 @@ async function load() {
     list.appendChild(div);
   });
 
-  window.currentData = data;
   window.currentSha = file.sha;
 }
 
+// ================== ADD ==================
 async function addItem() {
   const token = document.getElementById('token').value;
+
   const file = await getFile(token);
-  const data = JSON.parse(atob(file.content));
+  const data = decode(file.content);
+
+  if (!name.value) {
+    alert("Введи назву");
+    return;
+  }
 
   data.push({
     id: Date.now(),
@@ -116,27 +142,38 @@ async function addItem() {
   load();
 }
 
+// ================== EDIT ==================
 async function edit(id, field, value) {
   const token = document.getElementById('token').value;
+
   const file = await getFile(token);
-  const data = JSON.parse(atob(file.content));
+  const data = decode(file.content);
 
   const item = data.find(i => i.id === id);
+  if (!item) return;
+
   item[field] = value;
 
   await updateFile(token, data, file.sha);
 }
 
+// ================== DELETE ==================
 async function removeItem(id) {
+  if (!confirm('Точно видалити?')) return;
+
   const token = document.getElementById('token').value;
+
   const file = await getFile(token);
-  let data = JSON.parse(atob(file.content));
+  let data = decode(file.content);
 
   data = data.filter(i => i.id !== id);
 
   await updateFile(token, data, file.sha);
   load();
 }
+
+// ================== AUTO LOAD ==================
+setInterval(load, 5000);
 </script>
 
 </body>

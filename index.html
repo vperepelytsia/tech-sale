@@ -20,7 +20,7 @@
 </div>
 
 <script>
-fetch('data.json')
+fetch('https://raw.githubusercontent.com/vperepelytsia/tech-sale/main/data.json')
   .then(r => r.json())
   .then(items => {
     const catalog = document.getElementById('catalog');

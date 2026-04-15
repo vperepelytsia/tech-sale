@@ -22,24 +22,6 @@
     "formLink": "https://docs.google.com/forms/d/e/1FAIpQLSevPeB5C7O0UP7JN10yyvIMc9eB6Zs_IFMZe_-Y0fsxC8QVug/viewform?usp=pp_url&entry.1223581707=Dell+Latitude+5490"
   },
   {
-    "id": 2,
-    "type": "Monitor",
-    "name": "Samsung Monitor 24\"",
-    "specs": "24\" · Full HD · HDMI",
-    "features": [
-      "24\" IPS",
-      "1920×1080",
-      "HDMI",
-      "60 Hz"
-    ],
-    "defects": "1 битий піксель",
-    "price": "2500 грн",
-    "status": "reserved",
-    "photos": [
-      "images/monitor-24.jpg"
-    ]
-  },
-  {
     "id": 3,
     "type": "Laptop",
     "name": "Dell Inspiron 3593",

@@ -26,10 +26,12 @@ fetch(`https://raw.githubusercontent.com/vperepelytsia/tech-sale/main/data.json?
     const catalog = document.getElementById('catalog');
 
     items.forEach(item => {
+      if (!item.name) return;
+
       const card = document.createElement('div');
       card.className = 'card';
 
-      const photos = item.photos.map(p =>
+      const photos = (item.photos || []).map(p =>
         `<img src="${p}" onclick="openLightbox('${p}')">`
       ).join('');
 
@@ -40,7 +42,7 @@ fetch(`https://raw.githubusercontent.com/vperepelytsia/tech-sale/main/data.json?
         : '';
 
       const button = item.status === 'available'
-        ? `<a class="btn" href="${item.formLink}" target="_blank">Зарезервувати</a>`
+        ? `<a class="btn" href="${item.formLink || '#'}" target="_blank">Зарезервувати</a>`
         : '';
 
       card.innerHTML = `
@@ -48,7 +50,7 @@ fetch(`https://raw.githubusercontent.com/vperepelytsia/tech-sale/main/data.json?
         <h3>${item.name}</h3>
         <p>${item.specs}</p>
         ${features}
-        <p class="defects">${item.defects}</p>
+        <p class="defects">${item.defects || ''}</p>
         <p class="price">${item.price}</p>
         <span class="status ${item.status}">
           ${item.status === 'available' ? 'В наявності' : 'Зарезервовано'}
@@ -69,6 +71,6 @@ function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
 }
 </script>
-
+  
 </body>
 </html>
